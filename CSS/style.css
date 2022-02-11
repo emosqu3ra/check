@@ -3,19 +3,26 @@
 *, body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+    padding: 0px;
+    margin: 0px;
 }
 
 html, body {
     height: 100%;
-    background-color: #555b6e;
-    overflow: hidden;
+    background-color: #577590;
 }
 
+/* HEADER COMPLETE RONISHA */
+
+/* NAV BAR COMPLETE ALEX */
+
+/* SECTIONS FOR TASK MANAGER AND TO DO COMPLETE ESTEPHANIE */
+
 /* SECTION 1 */
-.sectionone {
+
+section .sectionone {
     width: 60rem;
     height:55rem;
-    margin: 1% 33%;
 }
 
 /* TASK SUBMISSION FORM */
@@ -60,7 +67,6 @@ html, body {
 .btn {
     background-color: #faf9f9;
     color: #8D8D8D;
-    margin-left: 35%;
 }
 
 .form-control{
@@ -75,4 +81,24 @@ html, body {
     font-weight: 300;
     color: #8D8D8D;
     margin-top: 16px;
+}
+
+.todo{
+    text-align: center;
+    margin: 1% 33%;
+    color: white;
+}
+
+/* TASK MANAGER SECTION ESTEPHANIE */
+
+.taskmanager{
+    text-align: center;
+    margin: 1% auto;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+}
+
+section h1 {
+    text-align: center;
 }
