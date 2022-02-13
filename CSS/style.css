@@ -89,7 +89,10 @@ section .sectionone {
     color: white;
 }
 
-
+.border {
+    width: 100%;
+    border-top: 1px solid white;
+}
 
 /* TASK MANAGER SECTION ESTEPHANIE */
 
