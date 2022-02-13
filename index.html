@@ -54,201 +54,285 @@
   
 
     <!-- TASK FORM SUBMISSION SECTION ESTEPHANIE -->
-  <section class="todo">
-    <img src="./images/tasksubmit.png" alt=taskchecklistimg width=300rem height=250rem>
-<<<<<<< HEAD
-    <h1>Your Go To-Do List</h1>
-    <section class=sectionone>
-||||||| 44633b4
-    <h1>Your Go-To To-Do List</h1>
-    <section class=sectionone>
-=======
-    <h1 class="text-center">Your Go-To To-Do List</h1>
-    <section class="sectionone">
->>>>>>> 12712b5b329e957195f4bff793b86d5d19339447
-      <form class="requires-validation submittask" action="./tasks/" method="post">
-  
-        <h3>Task Submission Form</h3>
-        <p>Fill in the data below.</p>
-  
-        <!-- NAME -->
-        <input class="form-control" type="text" name="name" placeholder="Full Name" required>
-        <div class="valid-feedback">Full Name</div>
-        <div class="invalid-feedback">Name field cannot be blank!</div>
-  
-        <!-- DESCRIPTION -->
-        <input class="form-control" type="text" name="description" placeholder="Task Description" required>
-        <div class="valid-feedback">Description field is valid!</div>
-        <div class="invalid-feedback">Description field cannot be blank!</div>
-  
-        <!-- ASSIGNED TO -->
-        <input class="form-control" type="text" name="name" placeholder="Assigned To" required>
-        <div class="valid-feedback">Assigned to field is valid!</div>
-        <div class="invalid-feedback">Assigned to field cannot be blank!</div>
-  
-        <!-- DUE DATE -->
-        <form action="/action_page.php">
-          <label for="duedate" class="duedate">Due Date:</label>
-          <input type="date" id="duedate" name="duedate" class="date">
-  
-        <!-- SUBMISSION FORM -->
-        <button id="submit" type="submit" class="btn">Submit</button>
-  
+    <section class="todo">
+      <img src="./images/tasksubmit.png" alt=taskchecklistimg width=300rem height=250rem>
+      <h1>Your To-Do List</h1>
+      <section class="sectionone">
+          <form class="requires-validation submittask" action="./tasks/" method="post">
+            <h3>Task Submission Form</h3>
+          <p>Fill in the data below.</p>
+    
+          <!-- NAME -->
+          <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+          <div class="valid-feedback">Full Name</div>
+          <div class="invalid-feedback">Name field cannot be blank!</div>
+    
+          <!-- DESCRIPTION -->
+          <input class="form-control" type="text" name="description" placeholder="Task Description" required>
+          <div class="valid-feedback">Description field is valid!</div>
+          <div class="invalid-feedback">Description field cannot be blank!</div>
+    
+          <!-- ASSIGNED TO -->
+          <input class="form-control" type="text" name="name" placeholder="Assigned To" required>
+          <div class="valid-feedback">Assigned to field is valid!</div>
+          <div class="invalid-feedback">Assigned to field cannot be blank!</div>
+    
+          <!-- DUE DATE -->
+          <form action="/action_page.php">
+            <label for="duedate" class="duedate">Due Date:</label>
+            <input type="date" id="duedate" name="duedate" class="date">
+    
+          <!-- SUBMISSION FORM -->
+          <button id="submit" type="submit" class="btn">Submit</button>
+    
+          </form>
         </form>
-      </form>
-    </section>
-  </section>  
+          </form>
+      </section>
+    </section>  
+    
+ 
     
     <!-- TASK MANAGER SECTION COMPLETED BY ESTEPHANIE -->
 
   <section>
-    <h1>Upcoming Tasks</h1>  
-  <div class="container">
-    <div class="row">
-  
-    <section class="taskmanager">
+    <h1>Upcoming Tasks</h1> 
+    <section>
+      <div class="grid">
+        <div class="sampleone">
+          <div>
+            <section class="sectionone">
+              <form class="requires-validation submittask" action="./tasks/" method="post">
+        
+          
+                <!-- NAME -->
+                <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+                <div class="valid-feedback">Full Name</div>
+                <div class="invalid-feedback">Name field cannot be blank!</div>
+          
+                <!-- DESCRIPTION -->
+                <input class="form-control" type="text" name="description" placeholder="Task Description" required>
+                <div class="valid-feedback">Description field is valid!</div>
+                <div class="invalid-feedback">Description field cannot be blank!</div>
+          
+                <!-- ASSIGNED TO -->
+                <input class="form-control" type="text" name="name" placeholder="Assigned To" required>
+                <div class="valid-feedback">Assigned to field is valid!</div>
+                <div class="invalid-feedback">Assigned to field cannot be blank!</div>
+          
+                <!-- UPDATE -->
+                <form action="/action_page.php">
+                  <label for="duedate" class="duedate">Update On:</label>
+                  <input type="date" id="duedate" name="duedate" class="date">
+          
+                <!-- STATUS -->
+                <select class="form-select mt-3" required>
+                  <option selected disabled value="">Status</option>
+                  <option value="jweb">Started</option>
+                  <option value="sweb">Paused</option>
+                  <option value="pmanager">Completed</option>
+           </select>
+            <div class="valid-feedback">You selected a task status!</div>
+            <div class="invalid-feedback">Please select a task status!</div>
+                </form>
+              </form>
+            </section>
+          </div>
+        </div>
 
-      <!-- SAMPLE 1 -->
-      <section class="sectionone">
-        <form class="requires-validation submittask" action="./tasks/" method="post">
-  
-    
-          <!-- NAME -->
-          <input class="form-control" type="text" name="name" placeholder="Full Name" required>
-          <div class="valid-feedback">Full Name</div>
-          <div class="invalid-feedback">Name field cannot be blank!</div>
-    
-          <!-- DESCRIPTION -->
-          <input class="form-control" type="text" name="description" placeholder="Task Description" required>
-          <div class="valid-feedback">Description field is valid!</div>
-          <div class="invalid-feedback">Description field cannot be blank!</div>
-    
-          <!-- ASSIGNED TO -->
-          <input class="form-control" type="text" name="name" placeholder="Assigned To" required>
-          <div class="valid-feedback">Assigned to field is valid!</div>
-          <div class="invalid-feedback">Assigned to field cannot be blank!</div>
-    
-          <!-- UPDATE -->
-          <form action="/action_page.php">
-            <label for="duedate" class="duedate">Update On:</label>
-            <input type="date" id="duedate" name="duedate" class="date">
-    
-          <!-- STATUS -->
-          <select class="form-select mt-3" required>
-            <option selected disabled value="">Status</option>
-            <option value="jweb">Started</option>
-            <option value="sweb">Paused</option>
-            <option value="pmanager">Completed</option>
-     </select>
-      <div class="valid-feedback">You selected a task status!</div>
-      <div class="invalid-feedback">Please select a task status!</div>
-    
-    
-          </form>
-        </form>
-      </section>
+        <div class="samepletwo">
+          <div>
+            <section class="sectionone">
+              <form class="requires-validation submittask" action="./tasks/" method="post">
+        
+          
+                <!-- NAME -->
+                <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+                <div class="valid-feedback">Full Name</div>
+                <div class="invalid-feedback">Name field cannot be blank!</div>
+          
+                <!-- DESCRIPTION -->
+                <input class="form-control" type="text" name="description" placeholder="Task Description" required>
+                <div class="valid-feedback">Description field is valid!</div>
+                <div class="invalid-feedback">Description field cannot be blank!</div>
+          
+                <!-- ASSIGNED TO -->
+                <input class="form-control" type="text" name="name" placeholder="Assigned To" required>
+                <div class="valid-feedback">Assigned to field is valid!</div>
+                <div class="invalid-feedback">Assigned to field cannot be blank!</div>
+          
+                <!-- UPDATE -->
+                <form action="/action_page.php">
+                  <label for="duedate" class="duedate">Update On:</label>
+                  <input type="date" id="duedate" name="duedate" class="date">
+          
+                <!-- STATUS -->
+                <select class="form-select mt-3" required>
+                  <option selected disabled value="">Status</option>
+                  <option value="jweb">Started</option>
+                  <option value="sweb">Paused</option>
+                  <option value="pmanager">Completed</option>
+           </select>
+            <div class="valid-feedback">You selected a task status!</div>
+            <div class="invalid-feedback">Please select a task status!</div>
+                </form>
+              </form>
+            </section>
+          </div>
+        </div>
 
-      <!-- TASK SAMPLE 2 -->
-      <section class="sectionone">
-        <form class="requires-validation submittask" action="./tasks/" method="post">
-
-          <!-- NAME -->
-          <input class="form-control" type="text" name="name" placeholder="Full Name" required>
-          <div class="valid-feedback">Full Name</div>
-          <div class="invalid-feedback">Name field cannot be blank!</div>
-    
-          <!-- DESCRIPTION -->
-          <input class="form-control" type="text" name="description" placeholder="Task Description" required>
-          <div class="valid-feedback">Description field is valid!</div>
-          <div class="invalid-feedback">Description field cannot be blank!</div>
-    
-          <!-- ASSIGNED TO -->
-          <input class="form-control" type="text" name="name" placeholder="Assigned To" required>
-          <div class="valid-feedback">Assigned to field is valid!</div>
-          <div class="invalid-feedback">Assigned to field cannot be blank!</div>
-    
-          <!-- UPDATE -->
-          <form action="/action_page.php">
-            <label for="duedate" class="duedate">Update On:</label>
-            <input type="date" id="duedate" name="duedate" class="date">
-    
-          <!-- STATUS -->
-          <select class="form-select mt-3" required>
-            <option selected disabled value="">Status</option>
-            <option value="jweb">Started</option>
-            <option value="sweb">Paused</option>
-            <option value="pmanager">Completed</option>
-     </select>
-      <div class="valid-feedback">You selected a task status!</div>
-      <div class="invalid-feedback">Please select a task status!</div>
- </div>
-    
-          </form>
-        </form>
-      </section>
-
-      <!-- TASK SAMPLE 3 -->
-
-      <section class=sectionone>
-        <form class="requires-validation submittask" action="./tasks/" method="post">
-    
-          <!-- NAME -->
-          <input class="form-control" type="text" name="name" placeholder="Full Name" required>
-          <div class="valid-feedback">Full Name</div>
-          <div class="invalid-feedback">Name field cannot be blank!</div>
-    
-          <!-- DESCRIPTION -->
-          <input class="form-control" type="text" name="description" placeholder="Task Description" required>
-          <div class="valid-feedback">Description field is valid!</div>
-          <div class="invalid-feedback">Description field cannot be blank!</div>
-    
-          <!-- ASSIGNED TO -->
-          <input class="form-control" type="text" name="name" placeholder="Assigned To" required>
-          <div class="valid-feedback">Assigned to field is valid!</div>
-          <div class="invalid-feedback">Assigned to field cannot be blank!</div>
-    
-          <!-- UPDATE -->
-          <form action="/action_page.php">
-            <label for="duedate" class="duedate">Update On:</label>
-            <input type="date" id="duedate" name="duedate" class="date">
-    
-          <!-- STATUS -->
-          <select class="form-select mt-3" required>
-            <option selected disabled value="">Status</option>
-            <option value="jweb">Started</option>
-            <option value="sweb">Paused</option>
-            <option value="pmanager">Completed</option>
-     </select>
-      <div class="valid-feedback">You selected a task status!</div>
-      <div class="invalid-feedback">Please select a task status!</div>
- </div>
-  
-          </form>
-        </form>
-      </section>
-
-    </section>  
+        <div class="samplethree">
+          <div>
+            <section class="sectionone">
+              <form class="requires-validation submittask" action="./tasks/" method="post">
+        
+          
+                <!-- NAME -->
+                <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+                <div class="valid-feedback">Full Name</div>
+                <div class="invalid-feedback">Name field cannot be blank!</div>
+          
+                <!-- DESCRIPTION -->
+                <input class="form-control" type="text" name="description" placeholder="Task Description" required>
+                <div class="valid-feedback">Description field is valid!</div>
+                <div class="invalid-feedback">Description field cannot be blank!</div>
+          
+                <!-- ASSIGNED TO -->
+                <input class="form-control" type="text" name="name" placeholder="Assigned To" required>
+                <div class="valid-feedback">Assigned to field is valid!</div>
+                <div class="invalid-feedback">Assigned to field cannot be blank!</div>
+          
+                <!-- UPDATE -->
+                <form action="/action_page.php">
+                  <label for="duedate" class="duedate">Update On:</label>
+                  <input type="date" id="duedate" name="duedate" class="date">
+          
+                <!-- STATUS -->
+                <select class="form-select mt-3" required>
+                  <option selected disabled value="">Status</option>
+                  <option value="jweb">Started</option>
+                  <option value="sweb">Paused</option>
+                  <option value="pmanager">Completed</option>
+           </select>
+            <div class="valid-feedback">You selected a task status!</div>
+            <div class="invalid-feedback">Please select a task status!</div>
+                </form>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
-</div> 
-</div> 
-</div> 
+
     <!-- COMPLETED SECTION -->
 
-  <section></section>
+    <section>
+      <h1>Completed</h1> 
+      <section>
+        <div class="grid">
+          <div class="sampleone">
+            <div>
+              <section class="sectionone">
+                <form class="requires-validation submittask" action="./tasks/" method="post">
+            
+                  <!-- DESCRIPTION -->
+                  <input class="form-control" type="text" name="description" placeholder="Task Description" required>
+                  <div class="valid-feedback">Description field is valid!</div>
+                  <div class="invalid-feedback">Description field cannot be blank!</div>
 
-<<<<<<< HEAD
-    <!-- FOOTER COMPLETED BY Zerihun-->
-||||||| 44633b4
-    <!-- FOOTER COMPLETED BY ESTEPHANIE-->
-=======
-    <!-- FOOTER COMPLETED BY ZERIHUN-->
->>>>>>> 12712b5b329e957195f4bff793b86d5d19339447
+                  <!-- UPDATE -->
+                  <form action="/action_page.php">
+                    <label for="duedate" class="duedate">Completed:</label>
+                    <input type="date" id="duedate" name="duedate" class="date">
+            
+                  <!-- STATUS -->
+                  <select class="form-select mt-3" required>
+                    <option selected disabled value="">Completion Status</option>
+                    <option value="jweb">Rejected</option>
+                    <option value="sweb">Cancelled</option>
+                    <option value="pmanager">Completed</option>
+             </select>
+              <div class="valid-feedback">You selected a task status!</div>
+              <div class="invalid-feedback">Please select a task status!</div>
+                  </form>
+                </form>
+              </section>
+            </div>
+          </div>
+  
+          <div class="samepletwo">
+            <div>
+              <section class="sectionone">
+                <form class="requires-validation submittask" action="./tasks/" method="post">
+            
+                  <!-- DESCRIPTION -->
+                  <input class="form-control" type="text" name="description" placeholder="Task Description" required>
+                  <div class="valid-feedback">Description field is valid!</div>
+                  <div class="invalid-feedback">Description field cannot be blank!</div>
+            
+                  <!-- UPDATE -->
+                  <form action="/action_page.php">
+                    <label for="duedate" class="duedate">Update On:</label>
+                    <input type="date" id="duedate" name="duedate" class="date">
+            
+                  <!-- STATUS -->
+                  <select class="form-select mt-3" required>
+                    <option selected disabled value="">Completion Status</option>
+                    <option value="jweb">Rejected</option>
+                    <option value="sweb">Cancelled</option>
+                    <option value="pmanager">Completed</option>
+             </select>
+              <div class="valid-feedback">You selected a task status!</div>
+              <div class="invalid-feedback">Please select a task status!</div>
+                  </form>
+                </form>
+              </section>
+            </div>
+          </div>
+  
+          <div class="samplethree">
+            <div>
+              <section class="sectionone">
+                <form class="requires-validation submittask" action="./tasks/" method="post">
+            
+                  <!-- DESCRIPTION -->
+                  <input class="form-control" type="text" name="description" placeholder="Task Description" required>
+                  <div class="valid-feedback">Description field is valid!</div>
+                  <div class="invalid-feedback">Description field cannot be blank!</div>
+            
+                  <!-- UPDATE -->
+                  <form action="/action_page.php">
+                    <label for="duedate" class="duedate">Update On:</label>
+                    <input type="date" id="duedate" name="duedate" class="date">
+            
+                  <!-- STATUS -->
+                  <select class="form-select mt-3" required>
+                    <option selected disabled value="">Status</option>
+                    <option value="jweb">Rejected</option>
+                    <option value="sweb">Cancelled</option>
+                    <option value="pmanager">Completed</option>
+             </select>
+              <div class="valid-feedback">You selected a task status!</div>
+              <div class="invalid-feedback">Please select a task status!</div>
+                  </form>
+                </form>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
 
+<!-- FOOTER -->
   <footer>
     <div class="container">
     <p>@TaskCard 2022-By Alex, Roshina,Estephanie</p>  
+    <a href="https://www.GitHub.com"><img src="./images/github.png" alt="GitHub" height=35px width=35px></a>
+    <a href="https://www.twitter.com"><img src="./images/twitter.png" alt="Twitter" height=30px width=35px></a>
+    <a href="https://www.Instagram.com"><img src="./images/insta.png" alt="Instagram" height=30px width=30px></a>
+    <a href="https://www.linkedin.com/"><img src="./images/linkedin.png" alt=LinkedIn height=30px width=30px></a>
     </div>
-
   </footer>
 
 

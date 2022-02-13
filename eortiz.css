@@ -12,17 +12,17 @@ html, body {
     background-color: #577590;
 }
 
-/* HEADER COMPLETE */
+/* HEADER COMPLETE RONISHA */
 
-/* NAV BAR COMPLETE */
+/* NAV BAR COMPLETE ALEX */
 
-/* SECTIONS FOR TASK MANAGER AND TO DO */
+/* SECTIONS FOR TASK MANAGER AND TO DO COMPLETE ESTEPHANIE */
 
 /* SECTION 1 */
 
 section .sectionone {
     width: 60rem;
-    padding-bottom: 10%;
+    height:55rem;
     text-align: center;
 }
 
@@ -85,7 +85,7 @@ section .sectionone {
 
 .todo{
     text-align: center;
-    margin: 1% 35%;
+    margin: 1% 33%;
     color: white;
 }
 
@@ -97,25 +97,9 @@ section .sectionone {
     text-align: center;
     margin: 1% auto;
     color: white;
-    display:inline-flex;
+    align-items: center;
 }
 
 section h1 {
     text-align: center;
-    color: white;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 1fr;
-    text-align: center;
-    gap: 10px;
-    padding: 2%;
-}
-
-/* FOOTER */
-footer {
-    padding: 5%;
-    border-top: 1px solid white;
 }
