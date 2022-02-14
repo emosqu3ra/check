@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
-
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
 *, body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -19,6 +19,54 @@ html, body {
 /* SECTIONS FOR TASK MANAGER AND TO DO */
 
 /* SECTION 1 */
+
+
+/* image */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  
+  header {
+    background: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(https://houstonfoodfinder.com/wp-content/uploads/2019/10/andrew-neel-cckf4TsHAuw-unsplash.jpg);
+    background-size: cover;
+    height: 75vh;
+  }
+  
+  .title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f5f4f4;;
+    text-align: center;
+  }
+  h1 {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 5rem;
+    white-space: nowrap;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  p {
+    margin: 0;
+    font-size: 2rem;
+  }
+  #more {display: none;} 
+
+ 
+  
+  
+
+
+
+
 
 section .sectionone {
     width: 60rem;
