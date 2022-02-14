@@ -33,8 +33,11 @@ body {
         rgba(0, 0, 0, 0.5)
       ),
       url(https://houstonfoodfinder.com/wp-content/uploads/2019/10/andrew-neel-cckf4TsHAuw-unsplash.jpg);
-    background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     height: 75vh;
+
   }
   
   .title {
@@ -45,12 +48,7 @@ body {
     color: #f5f4f4;;
     text-align: center;
   }
-  h1 {
-    text-transform: uppercase;
-    margin: 0;
-    font-size: 5rem;
-    white-space: nowrap;
-  }
+
   h2 {
     font-size: 3rem;
   }
@@ -63,7 +61,14 @@ body {
  
   
   
-
+#myBtn {
+  padding: 1em;
+  border-radius: 20px;
+  border: 0 solid transparent;
+  background-color: darkgrey;
+  color: white;
+  margin-top: 5px;
+}
 
 
 
@@ -163,6 +168,10 @@ section h1 {
     text-align: center;
     gap: 10px;
     padding: 2%;
+}
+
+.completed {
+  margin-top: 10px;
 }
 
 /* FOOTER */
