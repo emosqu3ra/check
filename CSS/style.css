@@ -179,3 +179,18 @@ footer {
     padding: 5%;
     border-top: 1px solid white;
 }
+.container {
+  text-align: left;
+  margin: 5px;
+  float: left;
+}
+
+.github {
+  color: black;
+  text-decoration: none;
+}
+
+.icon {
+  text-align: right;
+  margin: 5px;
+}
