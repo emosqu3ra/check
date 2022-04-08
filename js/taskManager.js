@@ -1,13 +1,24 @@
 //Task 4 Alex making TaskManager Class
 
-let tasks;
+class TaskManager {
 
-class taskManager {
-  
-    constructor(tasks) {
+    constructor(currentId = 0) {
       this.tasks = [];
+      this.currentId = currentId;
     }
   
+    addTask(name, description, assignedTo, dueDate, status) {
+        
+        this.name = name;
+        this.description = description;
+        this.assignedTo = assignedTo;
+        this.dueDate = dueDate;
+        this.status = status;
+        id: this.currentId++;
+    }
+
+    this.tasks.push(task);
+
   }
 
 
