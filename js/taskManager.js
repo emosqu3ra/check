@@ -10,22 +10,6 @@ class taskManager {
   
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   //End of Alex's TaskManager Class section
 
+// Estephanie Task 7
