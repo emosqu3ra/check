@@ -37,7 +37,41 @@ function validFormFieldInput(data){
     return data !== null && data !== '';
 }
 
+console.log(tasks);
+
 //End of Alex's Task 4 section
+
+// Estephanie Task 7
+const taskslist = document.querySelector('#tasksList');
+
+taskslist.addEventListener()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//End of Estephanie's Section
 
 //Zerihun Task 6
 
