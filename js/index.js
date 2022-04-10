@@ -7,7 +7,12 @@ console.log(tasks);
 // Estephanie Task 7
 const taskslist = document.querySelector('#tasksList');
 
-taskslist.addEventListener()
+taskslist.addEventListener('click', (event) =>
+{
+    if (event.target.classList.contains('done-button'))
+})
+
+
 
 
 
