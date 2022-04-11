@@ -48,7 +48,13 @@ console.log(tasks);
 
 // Estephanie Task 7
 const taskslist = document.querySelector('#tasksList');
-taskslist.addEventListener('click', 
+
+taskslist.addEventListener('click', myFunction);
+
+function myFunction() {
+    
+}
+
 
 
 
