@@ -1,12 +1,6 @@
-//Ronisha Section 5 //
-
-
-// Alex's Task 4 section
-
-
-
 // Select the New Task Form
-const newTaskForm = document.querySelector('#newTaskForm');
+// const newTaskForm = document.querySelector('#newTaskForm');
+document.getElementById("newTaskForm")
 
 // Add an 'onsubmit' event listener
 newTaskForm.addEventListener('submit', (event) => {
@@ -42,17 +36,16 @@ function validFormFieldInput(data){
     return data !== null && data !== '';
 }
 
-console.log(tasks);
 
 //End of Alex's Task 4 section
 
 // Estephanie Task 7
 const taskslist = document.querySelector('#tasksList');
 
-taskslist.addEventListener('click', myFunction);
+taskslist.addEventListener('click', doneButtonChecker);
 
-function myFunction() {
-    
+function doneButtonChecker() {
+   
 }
 
 
