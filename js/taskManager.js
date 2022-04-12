@@ -38,7 +38,7 @@ class TaskManager {
         id: this.currentId++;
     }
 
-    this.tasks.push(task);
+    this.tasks.push(tasks);
 
   }
 
