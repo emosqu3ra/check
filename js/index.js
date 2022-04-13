@@ -1,51 +1,57 @@
-// // Select the New Task Form
-// // const newTaskForm = document.querySelector('#newTaskForm');
-// document.getElementById("newTaskForm")
+// TASK 4 
+document.getElementById("newTaskForm").addEventListener("submit", function addTask() {
+    addTask.preventDefault();
+      const name = document.querySelector("#name").value;
+      const description = document.querySelector("#description").value;
+      const assignedTo = document.querySelector("#assignedTo").value;
+      const dueDate = document.querySelector("#dueDate").value;
+      const status = 'TODO';
 
-// // Add an 'onsubmit' event listener
-// newTaskForm.addEventListener('submit', (event) => {
-//     // Prevent default action
-//     event.preventDefault();
+    // TASK 6 - ERROR ALERT MESSAGE
+    if (name.length === 0 || description.length === 0 || assignedTo.length === 0 || dueDate.length === 0){
+        console.log('Please fill out all fields!');
+          const myAlert = document.getElementById('alertMe');
+          myAlert.style.display = 'block';
+        } else {
+        console.log('All fields filled!');
+          const myAlert = document.getElementById('alertMe');
+          myAlert.style.display = 'none';
+          newTaskVar.addTask();
 
-//     // Select the inputs
-//     const newTaskNameInput = document.querySelector('#newTaskNameInput');
-//     const newTaskDescription = document.querySelector('#newTaskDescription');
-//     const newTaskAssignedTo = document.querySelector('#newTaskAssignedTo');
-//     const newTaskDueDate = document.querySelector('#newTaskDueDate');
-//     const errorMessage = document.querySelector('#alertMessage');
-    
-//     /*
-//         Validation code here
-//     */
+        // TASK 5
+          newTaskVar.render();  
+        } 
+        
 
-//     // Get the values of the inputs
-//     const name = newTaskNameInput.value;
-//     const description = newTaskDescription.value;
-//     const assignedTo = newTaskAssignedTo.value;
-//     const dueDate = newTaskDueDate.value;
-//     if(!validFormFieldInput(name)){
-//         errorMessage.innerHTML = "Invalid name input";
-//         errorMessage.style.display = "block"
-//     }else{
-//         errorMessage.style.display = "none"
-//     }
+});
 
-// });
+// TASK 6
+function validFormFieldInput(data) {
+    const newTaskNameInput = document.querySelector('#newTaskNameInput');
+    const name = newTaskNameInput.value;
+    console.log("name:  "+name);
+};
 
-// function validFormFieldInput(data){
-//     return data !== null && data !== '';
-// }
+// TASK 7 
+const listOfTasks = document.querySelector('#tasksList');
 
+// Checking for "mark as done" in tasks 
+tasksList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('done-button')) {
+        // transverse DOM for parent task
+        const parentTask = event.target.parentElement;
+        const taskId = Number(parentTask.dataset.taskId);
 
+        // getting tasks using the taskId
+        const task = newTaskVar.getTaskById(taskId);
 
-// // Estephanie Task 7
-// const taskslist = document.querySelector('#tasksList');
+        // Update status to 'done'
+        task.status = 'DONE';
 
-// taskslist.addEventListener('click', doneButtonChecker);
-
-// function doneButtonChecker() {
-   
-// }
+        // render task
+        newTaskVar.render();
+    }
+});
 
 
 
@@ -78,9 +84,3 @@
 
 
 
-
-
-
-
-
-//End of Zerihun's Task 6

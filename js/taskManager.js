@@ -1,4 +1,49 @@
-function createTaskHtml(name, description, assignedTo, dueDate, status) {
+// TASK 4
+class TaskManager {
+
+    constructor(currentId = 0) {
+      this.tasks = [];
+      this.currentId = currentId;
+    }
+  
+    addTask(name, description, assignedTo, dueDate, status) {
+        const tasks = {
+          name: name,
+          description: description,
+          assignedTo: assignedTo,
+          dueDate: dueDate,
+          status: status,
+          id: this.currentId++
+        };
+
+    this.tasks.push(tasks);
+
+  }
+
+// TASK 5
+  render(){
+    const tasksHtmlList = [];
+    const taskHtmlVar = tasksHtmlList; 
+    for (let i = 0; i < this.tasks.length; i++){
+      const task = this.tasks[i];
+      const newDate = new Date(task.dueDate);
+      // const formattedDate 
+  
+      const formattedDate = (newDate.getMonth() + 1) + '/' + (newDate.getDate() + 1)  + '/' + newDate.getFullYear();
+    
+      const taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate, task.status);
+      tasksHtmlList.push(taskHtml);
+      console.log(taskHtml);
+      console.log(tasksHtmlList);
+      for(let i = 0; i < tasksHtmlList.length; i++) {
+        document.getElementById("tasksLists").innerHTML = tasksHtmlList;
+      }
+    }
+  }
+}
+
+// TASK 5
+function createTaskHtml (name, description, assignedTo, dueDate, status) {
   const html = `
   <li class="list-group-item" data-task-id=${id}>
   <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
@@ -20,45 +65,4 @@ function createTaskHtml(name, description, assignedTo, dueDate, status) {
 return html;
 }
 
-//Task 4 Alex making TaskManager Class
-
-class TaskManager {
-
-    constructor(currentId = 0) {
-      this.tasks = [];
-      this.currentId = currentId;
-    }
-  
-    addTask(name, description, assignedTo, dueDate, status) {
-        const tasks = {
-          name: name,
-          description: description,
-          assignedTo: assignedTo,
-          dueDate: dueDate,
-          status: status,
-          id: this.currentId++
-        };
-
-    this.tasks.push(tasks);
-
-  }
-  render(){
-    const tasksHtmlList = [];
-    const taskHtmlVar = tasksHtmlList; 
-    for (let i = 0; i < this.tasks.length; i++){
-      const task = this.tasks[i];
-      const newDate = new Date(task.dueDate);
-      // const formattedDate 
-  
-      const formattedDate = (newDate.getMonth() + 1) + '/' + (newDate.getDate() + 1)  + '/' + newDate.getFullYear();
-    
-      const taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate, task.status);
-      tasksHtmlList.push(taskHtml);
-      console.log(taskHtml);
-      console.log(tasksHtmlList);
-      for(let i = 0; i < tasksHtmlList.length; i++) {
-        document.getElementById("tasksLists").innerHTML = tasksHtmlList;
-      }
-    }
-  }
-}
+// TASK 6
