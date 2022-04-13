@@ -1,5 +1,5 @@
 // TASK 4 
-document.getElementById("newTaskForm").addEventListener("submit", function addTask() {
+document.getElementById("newTaskForm").addEventListener("submit", function() {
     addTask.preventDefault();
       const name = document.querySelector("#name").value;
       const description = document.querySelector("#description").value;
@@ -21,8 +21,6 @@ document.getElementById("newTaskForm").addEventListener("submit", function addTa
         // TASK 5
           newTaskVar.render();  
         } 
-        
-
 });
 
 // TASK 6
@@ -58,21 +56,6 @@ tasksList.addEventListener('click', (event) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-//End of Estephanie's Section
-
-//Zerihun Task 6
 
 
 
