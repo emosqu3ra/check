@@ -12,16 +12,11 @@ html, body {
     background-color: #577590;
 }
 
-/* HEADER COMPLETE */
 
 /* NAV BAR COMPLETE */
 
-/* SECTIONS FOR TASK MANAGER AND TO DO */
 
-/* SECTION 1 */
-
-
-/* image */
+/* HEADER COMPLETE */
 body {
     font-family: 'Source Sans Pro', sans-serif;
   }
@@ -57,8 +52,6 @@ body {
     font-size: 2rem;
   }
   #more {display: none;} 
-
- 
   
   
 #myBtn {
@@ -70,16 +63,13 @@ body {
   margin-top: 5px;
 }
 
-
-
-
 section .sectionone {
     width: 60rem;
     padding-bottom: 10%;
     text-align: center;
 }
 
-/* TASK SUBMISSION FORM */
+/* TASK SUBMISSION FORMS */
 .duedate {
     width: 30%;
     padding: 9px 10px;
@@ -130,7 +120,6 @@ section .sectionone {
 .submittask {
     width: 40%;
     height: 40%;
-    border: 2px solid white;
     border-radius: 5px;
     padding: 15px;
     background-color: #89b0ae;
@@ -140,11 +129,6 @@ section .sectionone {
     text-align: center;
     margin: 1% 35%;
     color: white;
-}
-
-.border {
-    width: 100%;
-    border-top: 1px solid white;
 }
 
 /* TASK MANAGER SECTION */
