@@ -147,7 +147,7 @@ section .sectionone {
     border-top: 1px solid white;
 }
 
-/* TASK MANAGER SECTION ESTEPHANIE */
+/* TASK MANAGER SECTION */
 
 .taskmanager{
     text-align: center;
@@ -163,15 +163,11 @@ section h1 {
 
 .grid {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+    grid-template-rows: 2fr;
     text-align: center;
     gap: 10px;
-    padding: 2%;
-}
-
-.completed {
-  margin-top: 10px;
+    padding-left: 35%;
 }
 
 /* FOOTER */
