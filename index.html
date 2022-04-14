@@ -60,7 +60,7 @@
 
   <!-- TASKS  -->
   <main>
-    <ul class="tasksLists">
+    <ul id="tasksLists">
       <li class="list-group-item">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
@@ -197,6 +197,52 @@
 
             <!-- DONE -->
             <button type="button" class="done-button btn">Mark As Done</button>
+          </div>
+        </div>
+      </li>
+
+      <!-- NEW TASK FORM -->
+
+      <li class="list-group-item">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">New Task</h5>
+            <form id="newTaskForm">
+              <div>
+                <input id="newTaskNameInput" class="form-control" type="text" name="name" placeholder="Full Name" required>
+                <div class="valid-feedback">Full Name</div>
+                <div class="invalid-feedback">Name field cannot be blank!</div>
+              </div>
+
+              <div>
+                <input id="newTaskDescription" class="form-control" type="text" name="description" placeholder="Task Description" required>
+                <div class="valid-feedback">Description field is valid!</div>
+                <div class="invalid-feedback">Description field cannot be blank!</div>
+              </div>
+              
+              <div>
+                <input id="newTaskAssignedTo" class="form-control" type="text" name="assignedto" placeholder="Assigned To" required>
+                <div class="valid-feedback">Assigned to field is valid!</div>
+                <div class="invalid-feedback">Assigned to field cannot be blank!</div>
+              </div>
+
+              <!-- DUE DATE -->
+              <form id="newTaskDueDate" class="card-text" action="/action_page.php">
+                <label for="duedate" class="duedate">Due Date:</label>
+                <input id="newTaskNameInput" type="date" id="duedate" name="duedate" class="date">
+              </form>
+
+              <!-- STATUS -->
+              <span class="badge badge-primary">IN PROGRESS</span>
+
+              <!-- SUBMIT -->
+              <input id="newTaskNameInput" class="form-control" type="text" name="status" placeholder="Status" required>
+              <div class="valid-feedback">Status field is valid!</div>
+              <div class="invalid-feedback">Status field cannot be blank!</div>
+
+              <!-- DONE -->
+              <button type="button" class="done-button btn">Mark As Done</button>
+            </form>
           </div>
         </div>
       </li>

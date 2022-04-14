@@ -76,6 +76,7 @@ class taskManager {
     }
     // 5.2.4
     const tasksHtml = tasksHtmlList.join('\n');
-    // 5.2.5
+    // 5.2.5 and 6
+    document.getElementById("tasksLists").innerHTML = tasksHtmlList;
   }
 }
