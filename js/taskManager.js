@@ -1,68 +1,81 @@
-// TASK 4
-class TaskManager {
-
-    constructor(currentId = 0) {
-      this.tasks = [];
-      this.currentId = currentId;
-    }
-  
-    addTask(name, description, assignedTo, dueDate, status) {
-        const tasks = {
-          name: name,
-          description: description,
-          assignedTo: assignedTo,
-          dueDate: dueDate,
-          status: status,
-          id: this.currentId++
-        };
-
-    this.tasks.push(tasks);
-
-  }
-
-// TASK 5
-  render(){
-    const tasksHtmlList = [];
-    const taskHtmlVar = tasksHtmlList; 
-    for (let i = 0; i < this.tasks.length; i++){
-      const task = this.tasks[i];
-      const newDate = new Date(task.dueDate);
-      // const formattedDate 
-  
-      const formattedDate = (newDate.getMonth() + 1) + '/' + (newDate.getDate() + 1)  + '/' + newDate.getFullYear();
-    
-      const taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate, task.status);
-      tasksHtmlList.push(taskHtml);
-      console.log(taskHtml);
-      console.log(tasksHtmlList);
-      for(let i = 0; i < tasksHtmlList.length; i++) {
-        document.getElementById("tasksLists").innerHTML = tasksHtmlList;
-      }
-    }
-  }
-}
-
-// TASK 5
+// 5.1 
 function createTaskHtml (name, description, assignedTo, dueDate, status) {
-  const html = `
-  <li class="list-group-item" data-task-id=${id}>
-  <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
-      <h5>${name}</h5>
-      <span class="badge ${status === 'TODO' ? 'badge-danger' : 'badge-success'}">${status}</span>
-  </div>
-  <div class="d-flex w-100 mb-3 justify-content-between">
-      <small>Assigned To: ${assignedTo}</small>
-      <small>Due: ${dueDate}</small>
-  </div>
-  <p>${description}</p>
-  <div class="d-flex w-100 justify-content-end">
-      <button class="btn btn-outline-success done-button mr-1 ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
-      <button class="btn btn-outline-danger delete-button">Delete</button>
-  </div>
-</li>
-`;
+  // 5.1.2
+  const html = `<li class="list-group-item">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Task 1</h5>
+      <p class="card-text">${name}</p>
+      <p class="card-text">${description}</p>
+      <p class="card-text">Assigned To: ${assignedTo}</p>
 
+      <!-- DUE DATE -->
+      <form class="card-text" action="/action_page.php">
+        <label for="duedate" class="duedate">Due Date: ${dueDate}</label>
+        <input id="newTaskNameInput" type="date" id="duedate" name="duedate" class="date">
+      </form>
+
+      <!-- STATUS -->
+      <span class="badge badge-primary">${status}</span>
+      
+      <!-- SUBMIT -->
+      <input id="newTaskNameInput" class="form-control" type="text" name="status" placeholder="Status" required>
+      <div class="valid-feedback">Status field is valid!</div>
+      <div class="invalid-feedback">Status field cannot be blank!</div>
+
+      <!-- DONE -->
+      <button type="button" class="done-button btn">Mark As Done</button>
+    </div>
+  </div>
+</li>`
+;
+// 5.1.4
 return html;
 }
 
-// TASK 6
+// 4.2 
+class taskManager {
+  // 4.3.1
+  constructor() {
+    this.tasks = [];
+    this.currentId = 0;
+  }
+  get taskList() {
+    return this.tasks
+  }
+
+  // 4.3.3 
+  addTask(name, description, assignedTo, dueDate, status = 'TODO') {
+    const newTask = {
+      id: this.currentId++,
+      name: name,
+      description: description,
+      assignedTo: assignedTo,
+      dueDate: dueDate,
+      status: status
+    }
+    // 4.3.5
+    this.tasks.push(newTask);
+  }
+  // 5.2.1
+  render() {
+    // 5.2.2
+    let tasksHtmlList = [];
+    // 5.2.3
+    for (let i = 0; i < this.tasks.length; i++) {
+      // 5.2.3.i
+      let task = this.tasks[i];
+      // 5.2.3.ii
+      let newDate = new Date(task.dueDate);
+      // 5.2.3.iii
+      let formattedDate = currentDate.toDateString();
+      // 5.2.3.iv
+      let taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate, task.status);
+      // 5.2.3.v
+      tasksHtmlList.push(taskHtml);
+    }
+    // 5.2.4
+    const tasksHtml = tasksHtmlList.join('\n');
+    // 5.2.5
+  }
+}
