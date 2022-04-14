@@ -1,30 +1,40 @@
 // 5.1 
 function createTaskHtml (name, description, assignedTo, dueDate, status) {
   // 5.1.2
-  const html = `<li class="list-group-item">
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Task 1</h5>
-      <p class="card-text">${name}</p>
-      <p class="card-text">${description}</p>
-      <p class="card-text">Assigned To: ${assignedTo}</p>
-
-      <!-- DUE DATE -->
-      <form class="card-text" action="/action_page.php">
-        <label for="duedate" class="duedate">Due Date: ${dueDate}</label>
-        <input id="newTaskNameInput" type="date" id="duedate" name="duedate" class="date">
-      </form>
-
-      <!-- STATUS -->
-      <span class="badge badge-primary">${status}</span>
-      
-      <!-- SUBMIT -->
-      <input id="newTaskNameInput" class="form-control" type="text" name="status" placeholder="Status" required>
-      <div class="valid-feedback">Status field is valid!</div>
-      <div class="invalid-feedback">Status field cannot be blank!</div>
-
-      <!-- DONE -->
-      <button type="button" class="done-button btn">Mark As Done</button>
+  const html = `<li>
+  <div class="container">
+    <h1 class="my-5">Task List</h1>
+    <div class="row">
+        <div class="col">
+            <h2>New Task</h2>
+            <form id="newTaskForm">
+                <div class="form-group">
+                    <label for="newTaskNameInput">${name}</label>
+                    <input type="text" class="form-control" id="newTaskNameInput">
+                </div>
+                <div class="form-group">
+                    <label for="newTaskDescription">${description}</label>
+                    <textarea type="text" class="form-control" id="newTaskDescription"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="newTaskAssignedTo">Assigned To: ${assignedTo}</label>
+                        <input type="text" class="form-control" id="newTaskAssignedTo">
+                    </div>
+                    <div class="form-group col">
+                        <label for="newTaskDueDate">Due Date: ${dueDate}</label>
+                        <input type="date" class="form-control" id="newTaskDueDate">
+                    </div>
+                    <div class="form-row">
+                    <div class="form-group col">
+                        <label for="newTaskStatus">Status: ${status}</label>
+                        <input type="text" class="form-control" id="newTaskStatus">
+                    </div>
+                  </div>  
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Add Task</button>
+            </form>
+        </div>
     </div>
   </div>
 </li>`
@@ -76,7 +86,7 @@ class taskManager {
     }
     // 5.2.4
     const tasksHtml = tasksHtmlList.join('\n');
-    // 5.2.5 and 6
-    document.getElementById("tasksLists").innerHTML = tasksHtmlList;
+    // ******************************5.2.5 and 6
+    document.getElementById('#tasksLists').innerHTML = tasksHtmlList;
   }
 }
