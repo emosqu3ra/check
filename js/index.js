@@ -10,7 +10,7 @@ const newTaskForm = document.querySelector('#newTaskForm');
 
 // event listener when form submitted 
 newTaskForm.addEventListener('submit', (event) => {
-  // Prevent default action
+  // 4.4.3 - prevent default action
   event.preventDefault();
 
   // inputs
@@ -25,10 +25,10 @@ newTaskForm.addEventListener('submit', (event) => {
   const assignedTo = newTaskAssignedTo.value;
   const dueDate = newTaskDueDate.value;
 
-  // Add the task to the task manager
+  // 4.4.3
   taskManager.addTask(name, description, assignedTo, dueDate);
 
-  // Clear the form
+  // 4.4.4
   newTaskNameInput.value = '';
   newTaskDescription.value = '';
   newTaskAssignedTo.value = '';
