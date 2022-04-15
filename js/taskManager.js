@@ -9,13 +9,13 @@ function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
       <p class="card-text">${description}</p>
       <p class="card-text">Assigned To: ${assignedTo}</p>
 
-      <!-- DUE DATE -->
       <form class="card-text" action="/action_page.php">
         <label for="duedate" class="duedate">Due Date: ${dueDate}</label>
       </form>
 
-      <!-- DONE -->
       <button class="done-button btn btn-warning ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
+
+      <button class="delete-button btn btn-danger">Delete</button>
     </div>
   </div>
 </li>`
@@ -106,5 +106,18 @@ class taskManager {
       const currentId = localStorage.getItem('currentId');
       this.currentId = Number(currentId);
     }
+  }
+  // 9.2 to delete completed tasks from list 
+  deleteTask(taskId) {
+    const newTasks = [];
+    // 9.2.3
+    for(let d = 0; d < this.tasks.length; d++) {
+      const task = this.tasks[d];
+
+      if (task.id !== taskId) {
+        newTasks.push(task);
+      }
+    }
+    this.tasks = newTasks;
   }
 }

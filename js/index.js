@@ -59,7 +59,17 @@ tasksofLists.addEventListener('click', (event) => {
     task.status = 'DONE';
     manageTasks.render();
   }
+  // 9.3 looks to see if delete button is clicked to remove form from page *repeat of mark as done
+  if(event.target.classList.contains('delete-button')) {
+    const parentTask = event.target.parentElement;
+    const taskId = Number(parentTask.dataset.taskId);
+    
+    manageTasks.deleteTask(taskId);
+    manageTasks.save();
+    manageTasks.render();
+  }
 });
+
 
 
 
