@@ -46,13 +46,13 @@ newTaskForm.addEventListener('submit', (event) => {
 // 7.2.1
 const tasksofLists = document.querySelector('#tasksLists');
 
-// 7.2.4 and 7.2.5
+// 7.2.4 and 7.2.5 marks task as done once the button has been clicked in created tasks
 tasksofLists.addEventListener('click', (event) => {
   if(event.target.classList.contains('done-button')) {
-    // 7.2.6 DOM traversal 
-    const parentTask = event.target.parentElement.parentElement;
-    // console.log(parentTask);
-    // 7.5.2
+    // 7.2.6 DOM traversal identifies the elements of the new task
+    const parentTask = event.target.parentElement;
+    console.log(parentTask);
+    // 7.5.2 gives an id to each new task, converts the string to numerals 
     const taskId = Number(parentTask.dataset.taskId);
     // 7.5.3
     const task = manageTasks.getTaskById(taskId);

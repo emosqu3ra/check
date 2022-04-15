@@ -1,10 +1,11 @@
 // 5.1 function will allow the user to input and than see values required in task form
 function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
   // 5.1.2
-  const html = `<li id="tasksLists">
-  <div data-task-id="${id}" class="card" style="width: 18rem;">
-    <div class="card-body">
+  const html = `<li>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body" data-task-id="${id}">
       <h5 class="card-title">${name}</h5>
+      <p class="card-text" ${status === 'TODO' ? 'badge-danger' : 'badge-success'}">${status}</p>
       <p class="card-text">${description}</p>
       <p class="card-text">Assigned To: ${assignedTo}</p>
 
@@ -14,8 +15,7 @@ function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
       </form>
 
       <!-- DONE -->
-      <button class="btn btn-outline-success done-button ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done
-      </button>
+      <button class="done-button btn btn-warning ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
     </div>
   </div>
 </li>`
@@ -67,20 +67,21 @@ class taskManager {
     }
     // 5.2.4
     const tasksHtml = tasksHtmlList.join('\n');
-    console.log(tasksHtml);
+    // console.log(tasksHtml);
     // 5.2.5 and 6
     document.getElementById('tasksLists').innerHTML = tasksHtml;
   }
-  // 7.4.3
+  // 7.4.3 runs the task thru the id literal added in createHtml funciton to add an identifier to each task
   getTaskById(taskId) {
-    let foundTask = taskId;
+    let foundTask;
     // 7.4.4
     for (let f=0; f < this.tasks.length; f++) {
       let task = this.tasks[f];
-      if (task.id === foundTask) {
-        return foundTask;
+      if (task.id === taskId) {
+        foundTask = task;
       }
     }
+    return foundTask;
   }
   // 8.1 - save any tasks completed to the local storage = inspect > application > local storage
   save() {
