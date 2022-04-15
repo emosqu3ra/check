@@ -1,20 +1,20 @@
 // 5.1 
-function createTaskHtml (name, description, assignedTo, dueDate, status) {
+function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
   // 5.1.2
   const html = `<li>
-  <div class="card" style="width: 18rem;">
+  <div data-task-id="${id}" class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${name}</h5>
       <p class="card-text">${description}</p>
-      <p class="card-text">${assignedTo}</p>
+      <p class="card-text">Assigned To: ${assignedTo}</p>
 
       <!-- DUE DATE -->
       <form class="card-text" action="/action_page.php">
-        <label for="duedate" class="duedate">Due Date:${dueDate}</label>
+        <label for="duedate" class="duedate">Due Date: ${dueDate}</label>
       </form>
 
       <!-- STATUS -->
-      <span class="badge badge-primary">${status}</span>
+      <span class="badge ${status === 'TODO' ? 'badge-danger' :'badge-sucess'}">${status}</span>
 
       <!-- DONE -->
       <button type="button" class="done-button btn">Mark As Done</button>
@@ -64,7 +64,7 @@ class taskManager {
       // // 5.2.3.iii
       // let formattedDate = currentDate.toDateString();
       // 5.2.3.iv
-      let taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, task.dueDate, task.status);
+      let taskHtml = createTaskHtml(task.id, task.name, task.description, task.assignedTo, task.dueDate, task.status);
       // 5.2.3.v
       tasksHtmlList.push(taskHtml);
     }
@@ -73,5 +73,17 @@ class taskManager {
     console.log(tasksHtml);
     // 5.2.5 and 6
     document.getElementById('tasksLists').innerHTML = tasksHtml;
+  }
+
+  // 7.4.3
+  getTaskById(taskId) {
+    let foundTask = taskId;
+    // 7.4.4
+    for (let f=0; f < this.tasks.length; f++) {
+      let task = this.tasks[f];
+      if (task.id === foundTask) {
+        return foundTask;
+      }
+    }
   }
 }

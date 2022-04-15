@@ -23,11 +23,11 @@ newTaskForm.addEventListener('submit', (event) => {
     const description = newTaskDescription;
     const assignedTo = newTaskAssignedTo;
     const dueDate = newTaskDueDate;
+    const status = newTaskStatus;
 
-    console.log(name);
   if (name.length === 0 || description.length === 0 || assignedTo.length === 0 || dueDate.length === 0) {
     console.log('All fields but be filled!')} else {
-      manageTasks.addTask(name, description, assignedTo, dueDate, status = 'TODO');
+      manageTasks.addTask(name, description, assignedTo, dueDate, status);
       // 5.3
       manageTasks.render();
     }
@@ -40,27 +40,23 @@ newTaskForm.addEventListener('submit', (event) => {
 });
 
 // 7.2.1
-let tasksofLists = document.querySelector('#tasksLists');
+const tasksofLists = document.querySelector('#tasksLists');
 
 // 7.2.4 and 7.2.5
 tasksofLists.addEventListener('click', (event) => {
   if(event.target.classList.contains('done-button')) {
     // 7.2.6 DOM traversal 
-
-    // parent task
     const parentTask = event.target.parentElement.parentElement;
-
-    // taskId of the parent Task 
+    console.log(parentTask);
+    // 7.5.2
     const taskId = Number(parentTask.dataset.taskId);
-
-    // retrieve task from TaskManager
-    const task = taskManager.getTaskById(taskId);
-
-    task.status = 'DONE' ;
-
-    taskManager.render();
+    // 7.5.3
+    const task = manageTasks.getTaskById(taskId);
+    task.status = 'DONE';
+    manageTasks.render();
   }
 });
+
 
 
 
