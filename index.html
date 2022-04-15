@@ -12,9 +12,9 @@
 
 <body>
   <header>
-    <!-- NAVIGATION BAR WITH BOOTSTRAP ALEX -->
+    <!-- NAVIGATION BAR WITH BOOTSTRAP -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">Check!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,40 +31,30 @@
             <li class="nav-item">
               <a class="nav-link" href="#upcomingtasks">Upcoming</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#completedtasks">Completed</a>
-            </li>
           </ul>
         </div>
       </div>
     </nav>  
-
-  <!-- HEADER WITH INTRODUCTION TO PRODUCT RONISHA-->
-
-  <a id="overview"><header></a>
-    <div class="title">
-      <br>
-      <br>
-      <br>
-      <h2>Why Check?</h2> <br>
-      <p> We're dedicated to giving you the very best task manager, 
-        our mission is provide a product that is  dependable, portable and efficienct. 
-        Utilize the Check app to get more done your task can be managed captured, 
-        and edited from anywhere at any time, across any device!</p> 
-       <button onclick="myFunction()" id="myBtn">Learn More </button>
-    </div>
+    <!-- HEADER WITH INTRODUCTION TO PRODUCT-->
+    <h1 id="overview">What in the Check?!</h1>
+    <h4>
+      We're dedicated to giving you the very best task manager!
+      Our mission is provide a product that is  dependable, portable, and efficienct. 
+      Utilize this ultimate check app to get focused, get organized, and get things checked! 
+      Your task can be managed, captured, and edited from anywhere at any time, across any device! 
+      Check it out below!
+    </h2>
   </header>
 
   <!-- TASKS  -->
   <main>
     <ul>
       <!-- NEW TASK FORM 4.4 and 6.1-->
-      <li>
+      <li id="newTask">
         <div class="container">
-          <h1>Task List</h1>
+          <h1>Submit A New Task Here:</h1>
           <div class="row">
             <div class="col">
-              <h2>New Task</h2>
               <form id="newTaskForm">
                   <div class="form-group">
                       <label for="newTaskNameInput">Name</label>
@@ -90,61 +80,22 @@
                   <!-- <div id="alertMe" class="alert alert-danger" role="alert">
                   Please fill out all fields!
                   </div> -->
-                  <button id="newTaskFormButton" type="submit" class="btn btn-primary btn-block">Add Task</button>
+                  <button id="newTaskFormButton" type="submit" class="btn btn-dark btn-block">Add Task</button>
               </form>
           </div>
         </div>
       </li>
    
       <!-- SAVED AND LOADED TASK LIST TEMPLATE-->
-      <li id="tasksLists">
-        <div class="container">
-          <h1>Task List</h1>
-          <div class="row">
-            <div class="col">
-              <h2>New Task</h2>
-              <form id="newTaskForm">
-                  <div class="form-group">
-                      <label for="newTaskNameInput">Name</label>
-                      <input type="text" class="form-control" id="newTaskNameInput">
-                  </div>
-
-                  <div class="form-group">
-                      <label for="newTaskDescription">Description</label>
-                      <textarea type="text" class="form-control" id="newTaskDescription"></textarea>
-                  </div>
-                  
-                  <div class="form-row">
-                      <div class="form-group col">
-                          <label for="newTaskAssignedTo">Assigned To</label>
-                          <input type="text" class="form-control" id="newTaskAssignedTo">
-                      </div>
-                      <div class="form-group col">
-                          <label for="newTaskDueDate">Due Date: </label>
-                          <input type="date" class="form-control" id="newTaskDueDate">
-                      </div>
-                  </div> 
-                  <!--6.3-->
-                  <!-- <div id="alertMe" class="alert alert-danger" role="alert">
-                  Please fill out all fields!
-                  </div> -->
-                  <button id="newTaskFormButton" type="submit" class="btn btn-primary btn-block">Add Task</button>
-              </form>
-          </div>
-        </div>
-      </li>
+      <div id="upcomingtasks">
+        <li id="tasksLists"></li>
+      </div>
     </ul>
   </main>
    
 
 <!-- FOOTER -->
   <footer>
-   <div class="container"> 
-   <div>
-    @TaskCard 2022-By <a class="github" href="">Alex,</a>  <a class="github" href="">Estephanie,</a>  <a class="github" href="">Ronisha,</a>  <a class="github" href="">Zerihun</a>  
-   </div>   
-   </div>
-
    <div class="icon">
      <div>
       <a href="https://www.GitHub.com"><img src="./images/github.png" alt="GitHub" height=35px width=30px></a>

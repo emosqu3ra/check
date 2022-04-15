@@ -7,7 +7,7 @@
     margin: 0px;
 }
 
-/* HEADER COMPLETE */
+/* HEADER BACKGROUND IMG */
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -22,7 +22,63 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-  height: 75vh;
-
+    height: 65vh;
 }
 
+/* HEADER FORMATTING */
+header h1 {
+  color: white;
+  margin: 7vh 25vw;
+  text-align: center;
+}
+
+header h4 {
+  color: cornsilk;
+  text-align: center;
+  font-weight: lighter;
+  margin: 5vh 25vw;
+}
+
+
+/* TASK SUBMISSION FORMS */
+.duedate {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  outline: 0;
+  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 300;
+  color: #8D8D8D;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+ul {
+  list-style: none;
+}
+
+#newTask {
+  display: flexbox;
+  margin: auto;
+  width: 50%;
+  padding: 5vh;
+}
+
+#newTaskFormButton {
+  margin-left: 40%;
+  margin-top: 5vh;
+}
+
+#tasksLists {
+  display: flex;
+  flex-direction: row;
+  margin: 5vh;
+  margin-left: 7vw;
+}
+
+footer {
+  background-color: black;
+  padding: 2vh;
+}
