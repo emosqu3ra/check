@@ -2,39 +2,22 @@
 function createTaskHtml (name, description, assignedTo, dueDate, status) {
   // 5.1.2
   const html = `<li>
-  <div class="container">
-    <h1 class="my-5">Task List</h1>
-    <div class="row">
-        <div class="col">
-            <h2>New Task</h2>
-            <form id="newTaskForm">
-                <div class="form-group">
-                    <label for="newTaskNameInput">${name}</label>
-                    <input type="text" class="form-control" id="newTaskNameInput">
-                </div>
-                <div class="form-group">
-                    <label for="newTaskDescription">${description}</label>
-                    <textarea type="text" class="form-control" id="newTaskDescription"></textarea>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col">
-                        <label for="newTaskAssignedTo">Assigned To: ${assignedTo}</label>
-                        <input type="text" class="form-control" id="newTaskAssignedTo">
-                    </div>
-                    <div class="form-group col">
-                        <label for="newTaskDueDate">Due Date: ${dueDate}</label>
-                        <input type="date" class="form-control" id="newTaskDueDate">
-                    </div>
-                    <div class="form-row">
-                    <div class="form-group col">
-                        <label for="newTaskStatus">Status: ${status}</label>
-                        <input type="text" class="form-control" id="newTaskStatus">
-                    </div>
-                  </div>  
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Add Task</button>
-            </form>
-        </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">${name}</h5>
+      <p class="card-text">${description}</p>
+      <p class="card-text">${assignedTo}</p>
+
+      <!-- DUE DATE -->
+      <form class="card-text" action="/action_page.php">
+        <label for="duedate" class="duedate">Due Date:${dueDate}</label>
+      </form>
+
+      <!-- STATUS -->
+      <span class="badge badge-primary">${status}</span>
+
+      <!-- DONE -->
+      <button type="button" class="done-button btn">Mark As Done</button>
     </div>
   </div>
 </li>`
@@ -65,6 +48,7 @@ class taskManager {
       status: status
     }
     // 4.3.5
+    console.log(newTask.status);
     this.tasks.push(newTask);
   }
   // 5.2.1
@@ -76,17 +60,18 @@ class taskManager {
       // 5.2.3.i
       let task = this.tasks[i];
       // 5.2.3.ii
-      let newDate = new Date(task.dueDate);
-      // 5.2.3.iii
-      let formattedDate = currentDate.toDateString();
+      // let newDate = new Date(task.dueDate);
+      // // 5.2.3.iii
+      // let formattedDate = currentDate.toDateString();
       // 5.2.3.iv
-      let taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate, task.status);
+      let taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, task.dueDate, task.status);
       // 5.2.3.v
       tasksHtmlList.push(taskHtml);
     }
     // 5.2.4
     const tasksHtml = tasksHtmlList.join('\n');
-    // ******************************5.2.5 and 6
-    document.getElementById('#tasksLists').innerHTML = tasksHtmlList;
+    console.log(tasksHtml);
+    // 5.2.5 and 6
+    document.getElementById('tasksLists').innerHTML = tasksHtml;
   }
 }

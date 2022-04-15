@@ -9,31 +9,34 @@ const taskHtml = createTaskHtml('name, description, assignedTo, dueDate, status'
 const newTaskForm = document.querySelector('#newTaskForm');
 
 // event listener when form submitted 
-newTaskForm.addEventListener("submit", (event) => {
+newTaskForm.addEventListener('submit', (event) => {
   // prevent default action
   event.preventDefault();
+      // 6.2  
+    const newTaskNameInput = document.querySelector('#newTaskNameInput').value;
+    const newTaskDescription = document.querySelector('#newTaskDescription').value;
+    const newTaskAssignedTo = document.querySelector('#newTaskAssignedTo').value;
+    const newTaskDueDate = document.querySelector('#newTaskDueDate').value;
+    const newTaskStatus = document.querySelector('#newTaskStatus').value;
 
-  taskManager.addTask(name, description, assignedTo, dueDate);
+    const name = newTaskNameInput;
+    const description = newTaskDescription;
+    const assignedTo = newTaskAssignedTo;
+    const dueDate = newTaskDueDate;
 
-  // 6.2
-  const newTaskNameInput = document.querySelector('#newTaskNameInput');
-  const newTaskDescription = document.querySelector('#newTaskDescription').value;
-  const newTaskAssignedTo = document.querySelector('#newTaskAssignedTo').value;
-  const newTaskDueDate = document.querySelector('#newTaskDueDate').value;
-
-  const name = newTaskNameInput.value;
-  const description = newTaskDescription.value;
-  const assignedTo = newTaskAssignedTo.value;
-  const dueDate = newTaskDueDate.value;
-
-  // 6.3
-  taskManager.render();
-
+    console.log(name);
+  if (name.length === 0 || description.length === 0 || assignedTo.length === 0 || dueDate.length === 0) {
+    console.log('All fields but be filled!')} else {
+      manageTasks.addTask(name, description, assignedTo, dueDate, status = 'TODO');
+      // 5.3
+      manageTasks.render();
+    }
   // 4.4.4 clear sections
   newTaskNameInput.value = '';
   newTaskDescription.value = '';
   newTaskAssignedTo.value = '';
   newTaskDueDate.value = '';
+  newTaskStatus.value = '';
 });
 
 // 7.2.1
@@ -41,8 +44,8 @@ let tasksofLists = document.querySelector('#tasksLists');
 
 // 7.2.4 and 7.2.5
 tasksofLists.addEventListener('click', (event) => {
-  if(element.classList.contains('done-button')) {
-    // 7.6.7 DOM traversal 
+  if(event.target.classList.contains('done-button')) {
+    // 7.2.6 DOM traversal 
 
     // parent task
     const parentTask = event.target.parentElement.parentElement;
@@ -59,9 +62,7 @@ tasksofLists.addEventListener('click', (event) => {
   }
 });
 
-function validFormFieldInput(data){
-  return data !== null && data !== '';
-}  
+
 
 
 
