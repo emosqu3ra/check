@@ -1,7 +1,7 @@
-// 5.1 
+// 5.1 function will allow the user to input and than see values required in task form
 function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
   // 5.1.2
-  const html = `<li>
+  const html = `<li id="tasksLists">
   <div data-task-id="${id}" class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${name}</h5>
@@ -13,11 +13,9 @@ function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
         <label for="duedate" class="duedate">Due Date: ${dueDate}</label>
       </form>
 
-      <!-- STATUS -->
-      <span class="badge ${status === 'TODO' ? 'badge-danger' :'badge-sucess'}">${status}</span>
-
       <!-- DONE -->
-      <button type="button" class="done-button btn">Mark As Done</button>
+      <button class="btn btn-outline-success done-button ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done
+      </button>
     </div>
   </div>
 </li>`
@@ -26,32 +24,31 @@ function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
 return html;
 }
 
-// 4.2 
+// 4.2 this sets up the ability for the tasks form to start accepting inputs of tasks, having them posted, saving them locally, and than pulling them during new browser sessions
 class taskManager {
   // 4.3.1
-  constructor() {
+  constructor(currentId) {
     this.tasks = [];
     this.currentId = 0;
   }
   get taskList() {
     return this.tasks
   }
-
-  // 4.3.3 
-  addTask(name, description, assignedTo, dueDate, status = 'TODO') {
+  // 4.3.3 creating the user interactivity to actually add a task and submit it in browser 
+  addTask(name, description, assignedTo, dueDate) {
     const newTask = {
       id: this.currentId++,
       name: name,
       description: description,
       assignedTo: assignedTo,
       dueDate: dueDate,
-      status: status
+      status: 'TODO'
     }
     // 4.3.5
-    console.log(newTask.status);
+    // console.log(newTask.status);
     this.tasks.push(newTask);
   }
-  // 5.2.1
+  // 5.2.1 - appending the created tasks to the current browser section after adding tasks
   render() {
     // 5.2.2
     let tasksHtmlList = [];
@@ -74,7 +71,6 @@ class taskManager {
     // 5.2.5 and 6
     document.getElementById('tasksLists').innerHTML = tasksHtml;
   }
-
   // 7.4.3
   getTaskById(taskId) {
     let foundTask = taskId;
@@ -84,6 +80,30 @@ class taskManager {
       if (task.id === foundTask) {
         return foundTask;
       }
+    }
+  }
+  // 8.1 - save any tasks completed to the local storage = inspect > application > local storage
+  save() {
+    let tasksJson = JSON.stringify(this.tasks);
+    // 8.1.3
+    localStorage.setItem('tasks', tasksJson);
+    // 8.1.4
+    let currentId = String(this.currentId);
+    // 8.1.5
+    localStorage.setItem('currentId', currentId);
+  }
+  // 8.2 - check to see if there are any tasks and load any previous tasks to current browser 
+  load() {
+    // 8.2.3
+    if (localStorage.getItem('tasks')) {
+      const tasksJson = localStorage.getItem('tasks');
+      // 8.2.4
+      this.tasks = JSON.parse(tasksJson);
+    }
+    // repeat steps to check if there are any currentId in local storage as well 
+    if(localStorage.getItem('currentId')) {
+      const currentId = localStorage.getItem('currentId');
+      this.currentId = Number(currentId);
     }
   }
 }
