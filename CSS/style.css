@@ -69,14 +69,14 @@ ul {
 
 #newTaskFormButton {
   margin-left: 40%;
-  margin-top: 5vh;
+  margin-top: 2vh;
 }
 
 #tasksLists {
   display: flex;
   flex-direction: row;
-  margin: 5vh;
-  margin-left: 7vw;
+  flex-wrap: wrap;
+  padding: 1% 7%;
 }
 
 footer {
