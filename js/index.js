@@ -31,17 +31,22 @@ newTaskForm.addEventListener('submit', (event) => {
   
   // verifies that the user is filling in all the required fields correctly and if they do starts storing it  
   if (name.length === 0 || description.length === 0 || assignedTo.length === 0 || dueDate.length === 0) {
-    console.log('All fields but be filled!')} else {
-      manageTasks.addTask(name, description, assignedTo, dueDate);
-      manageTasks.render();
-      manageTasks.save();
-    }
-  // 4.4.4 clear sections
-  newTaskNameInput.value = '';
-  newTaskDescription.value = '';
-  newTaskAssignedTo.value = '';
-  newTaskDueDate.value = '';
+    console.log('All fields but be filled!');
+    // 6.3.3 display bootstrap alert if fields are blank
+    const alertEd = document.getElementById('anAlert');
+    alertEd.style.display = 'block';
+  } else {
+    // 6.3.4 hide bootstrap alert if fields are blank
+    const alertEd = document.getElementById('anAlert');
+    alertEd.style.display = 'none';
+    manageTasks.addTask(name, description, assignedTo, dueDate);
+    manageTasks.render();
+    manageTasks.save();
+  }  
 });
+
+
+
 
 // 7.2.1
 const tasksofLists = document.querySelector('#tasksLists');

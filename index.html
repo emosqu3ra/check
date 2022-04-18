@@ -77,10 +77,11 @@
                       </div>
                   </div> 
 
-                  <!--6.3-->
+                  <!--6.3.1-->
                   <br>
-                  <div id="alertMe" class="alert alert-success" role="alert">
-                  Please fill out all fields!
+                  <div class="alert alert-success alert-dismissible fade show" role="alert" id="anAlert">
+                    <strong>Woah buddy!</strong> Make sure you complete all fields.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                   </div>
 
                   <button id="newTaskFormButton" type="submit" class="btn btn-dark btn-block">Add Task</button>
@@ -108,6 +109,13 @@
      </div>
   </div> 
   </footer>
+
+  <!-- 6.3.2 JS to hide alert-->
+  <style>
+    #anAlert {
+      display: none;
+    }
+  </style>
 
   <!-- BOOTSTRAP JS PLUGIN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
