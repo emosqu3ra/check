@@ -27,9 +27,9 @@ return html;
 // 4.2 this sets up the ability for the tasks form to start accepting inputs of tasks, having them posted, saving them locally, and than pulling them during new browser sessions
 class taskManager {
   // 4.3.1
-  constructor(currentId) {
-    this.tasks = [];
-    this.currentId = 0;
+  constructor(currentId = 0, tasks = []) {
+    this.tasks = tasks;
+    this.currentId = currentId;
   }
   get taskList() {
     return this.tasks

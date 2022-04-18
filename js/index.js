@@ -1,9 +1,11 @@
-// initializing taskmanager and ability to add inputted fields to correct locations in form 
-const manageTasks = new taskManager(0);
-const taskHtml = createTaskHtml('name, description, assignedTo, dueDate, status');
+// initializing taskManager and ability to add inputted fields to correct locations in form 
+const manageTasks = new taskManager();
 
-// console.log(taskHtml);
-// console.log(taskManager);
+//TEMPLATE, DELETE THIS IF YOU DON'T WANT TO SEED YOU TASK LIST WHEN page load for the first time 
+manageTasks.addTask("Take out the dog", "Don't forget to do the bed when you wake up", "Stephanie", new Date().toDateString())
+manageTasks.addTask("Do the homework", "make sure math problems are correct", "Carlos", new Date().toDateString())
+manageTasks.addTask("Call Mary for HBD", "Remember her son is sick, ask for him", "Mary C.", new Date().toDateString())
+//TEMPLATE, DELETE THIS IF YOU DON'T WANT TO SEED YOU TASK LIST WHEN page load for the first time 
 
 // Load the tasks from localStorage
 manageTasks.load();
@@ -45,14 +47,11 @@ newTaskForm.addEventListener('submit', (event) => {
   }  
 });
 
-
-
-
 // 7.2.1
-const tasksofLists = document.querySelector('#tasksLists');
+const tasksOfLists = document.querySelector('#tasksLists');
 
 // 7.2.4 and 7.2.5 marks task as done once the button has been clicked in created tasks
-tasksofLists.addEventListener('click', (event) => {
+tasksOfLists.addEventListener('click', (event) => {
   if(event.target.classList.contains('done-button')) {
     // 7.2.6 DOM traversal identifies the elements of the new task
     const parentTask = event.target.parentElement;
