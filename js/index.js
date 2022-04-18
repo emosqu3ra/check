@@ -1,9 +1,5 @@
 // initializing taskmanager and ability to add inputted fields to correct locations in form 
 const manageTasks = new taskManager(0);
-// const taskHtml = createTaskHtml('name, description, assignedTo, dueDate, status');
-
-// console.log(taskHtml);
-// console.log(taskManager);
 
 // Load the tasks from localStorage
 manageTasks.load();

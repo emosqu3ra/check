@@ -27,13 +27,13 @@ return html;
 // 4.2 this sets up the ability for the tasks form to start accepting inputs of tasks, having them posted, saving them locally, and than pulling them during new browser sessions
 class taskManager {
   // 4.3.1
-  constructor(currentId) {
-    this.tasks = [];
-    this.currentId = 0;
+  constructor(currentId = 0, tasks = []) {
+    this.tasks = tasks;
+    this.currentId = currentId;
   }
-  get taskList() {
-    return this.tasks
-  }
+  // get taskList() {
+  //   return this.tasks
+  // }
   // 4.3.3 creating the user interactivity to actually add a task and submit it in browser 
   addTask(name, description, assignedTo, dueDate) {
     const newTask = {
