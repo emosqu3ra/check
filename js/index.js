@@ -38,6 +38,8 @@ newTaskForm.addEventListener('submit', (event) => {
     manageTasks.addTask(name, description, assignedTo, dueDate);
     manageTasks.render();
     manageTasks.save();
+
+    // 4.4.4
     newTaskNameInput.value = '';
     newTaskDescription.value = '';
     newTaskAssignedTo.value = '';
