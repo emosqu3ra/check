@@ -31,9 +31,7 @@ class taskManager {
     this.tasks = tasks;
     this.currentId = currentId;
   }
-  // get taskList() {
-  //   return this.tasks
-  // }
+ 
   // 4.3.3 creating the user interactivity to actually add a task and submit it in browser 
   addTask(name, description, assignedTo, dueDate) {
     const newTask = {
