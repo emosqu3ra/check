@@ -1,6 +1,6 @@
 // initializing taskmanager and ability to add inputted fields to correct locations in form 
 const manageTasks = new taskManager(0);
-const taskHtml = createTaskHtml('name, description, assignedTo, dueDate, status');
+// const taskHtml = createTaskHtml('name, description, assignedTo, dueDate, status');
 
 // console.log(taskHtml);
 // console.log(taskManager);
@@ -44,8 +44,6 @@ newTaskForm.addEventListener('submit', (event) => {
     manageTasks.save();
   }  
 });
-
-
 
 
 // 7.2.1
