@@ -1,7 +1,7 @@
 // 5.1 function will allow the user to input and than see values required in task form
 function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
   // 5.1.2
-  const html = `<li>
+  const html = `<li class="col-xl-3 col-lg-3 col-md-5">
   <div class="card" style="width: 18rem;">
     <div class="card-body" data-task-id="${id}">
       <h5 class="card-title">${name}</h5>
@@ -13,9 +13,9 @@ function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
         <label for="duedate" class="duedate">Due Date: ${dueDate}</label>
       </form>
 
-      <button class="done-button btn btn-dark ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
+      <button class="delete-button btn btn-warning">Delete</button>
 
-      <button class="delete-button btn btn-secondary">Delete</button>
+      <button class="done-button btn btn-dark ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
     </div>
   </div>
 </li>`

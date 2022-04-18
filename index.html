@@ -35,45 +35,45 @@
         </div>
       </div>
     </nav>  
-    <!-- HEADER WITH INTRODUCTION TO PRODUCT-->
-    <h1 id="overview">What in the Check?!</h1>
-    <h4>
-      We're dedicated to giving you the very best task manager!
-      Our mission is provide a product that is  dependable, portable, and efficienct. 
-      Utilize this ultimate check app to get focused, get organized, and get things checked! 
-      Your task can be managed, captured, and edited from anywhere at any time, across any device! 
-      Check it out below!
-    </h2>
   </header>
-
+  
   <!-- TASKS  -->
   <main>
-    <ul>
+    <div class="container-flex main_banner">
+      <!-- HEADER WITH INTRODUCTION TO PRODUCT-->
+      <h1 id="overview" class="display-1 text-center text-light">What in the Check?!</h1>
+      <p class="text-light p-3 pb-5 text-center fs-3">
+        We're dedicated to giving you the very best task manager!
+        Our mission is provide a product that is  dependable, portable, and efficienct. 
+        Utilize this ultimate check app to get focused, get organized, and get things checked! 
+        Your task can be managed, captured, and edited from anywhere at any time, across any device! 
+        Check it out below!
+      </p>
+    </div>
       <!-- NEW TASK FORM 4.4 and 6.1-->
-      <li id="newTask">
         <div class="container">
-          <h1>Submit A New Task Here:</h1>
-          <div class="row">
-            <div class="col">
+          <h1 class="text-center py-5">Submit A New Task Here:</h1>
+          <div class="row justify-content-center">
+            <div class="col-md-6">
               <form id="newTaskForm">
                   <div class="form-group">
                       <label for="newTaskNameInput">Name</label>
-                      <input type="text" class="form-control" id="newTaskNameInput">
+                      <input type="text" class="form-control mb-3" id="newTaskNameInput">
                   </div>
 
                   <div class="form-group">
                       <label for="newTaskDescription">Description</label>
-                      <textarea type="text" class="form-control" id="newTaskDescription"></textarea>
+                      <textarea type="text" class="form-control mb-3" id="newTaskDescription"></textarea>
                   </div>
                   
                   <div class="form-row">
                       <div class="form-group col">
                           <label for="newTaskAssignedTo">Assigned To</label>
-                          <input type="text" class="form-control" id="newTaskAssignedTo">
+                          <input type="text" class="form-control mb-3" id="newTaskAssignedTo">
                       </div>
                       <div class="form-group col">
                           <label for="newTaskDueDate">Due Date: </label>
-                          <input type="date" class="form-control" id="newTaskDueDate">
+                          <input type="date" class="form-control mb-3" id="newTaskDueDate">
                       </div>
                   </div> 
 
@@ -88,13 +88,13 @@
               </form>
           </div>
         </div>
-      </li>
    
       <!-- SAVED AND LOADED TASK LIST TEMPLATE-->
-      <div id="upcomingtasks">
-        <li id="tasksLists"></li>
+      <div class="container" id="upcomingtasks">
+        <ul class ="row gap-3 justify-content-center" id="tasksLists">
+          <!-- template li goes here -->
+        </ul>
       </div>
-    </ul>
   </main>
    
 

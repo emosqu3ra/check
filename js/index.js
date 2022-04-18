@@ -1,13 +1,6 @@
 // initializing taskManager and ability to add inputted fields to correct locations in form 
 const manageTasks = new taskManager();
 
-//TEMPLATE, DELETE THIS IF YOU DON'T WANT TO SEED YOU TASK LIST WHEN page load for the first time 
-manageTasks.addTask("Take out the dog", "Don't forget to do the bed when you wake up", "Stephanie", new Date().toDateString())
-manageTasks.addTask("Do the homework", "make sure math problems are correct", "Carlos", new Date().toDateString())
-manageTasks.addTask("Call Mary for HBD", "Remember her son is sick, ask for him", "Mary C.", new Date().toDateString())
-//TEMPLATE, DELETE THIS IF YOU DON'T WANT TO SEED YOU TASK LIST WHEN page load for the first time 
-
-
 // Load the tasks from localStorage
 manageTasks.load();
 
@@ -22,15 +15,15 @@ newTaskForm.addEventListener('submit', (event) => {
   // prevent default action
   event.preventDefault();
       // 6.2  makes sure the inputted data goes to the correct form fields 
-    const newTaskNameInput = document.querySelector('#newTaskNameInput').value;
-    const newTaskDescription = document.querySelector('#newTaskDescription').value;
-    const newTaskAssignedTo = document.querySelector('#newTaskAssignedTo').value;
-    const newTaskDueDate = document.querySelector('#newTaskDueDate').value;
+    let newTaskNameInput = document.querySelector('#newTaskNameInput');
+    let newTaskDescription = document.querySelector('#newTaskDescription');
+    let newTaskAssignedTo = document.querySelector('#newTaskAssignedTo');
+    let newTaskDueDate = document.querySelector('#newTaskDueDate');
 
-    const name = newTaskNameInput;
-    const description = newTaskDescription;
-    const assignedTo = newTaskAssignedTo;
-    const dueDate = newTaskDueDate;
+    const name = newTaskNameInput.value;
+    const description = newTaskDescription.value;
+    const assignedTo = newTaskAssignedTo.value;
+    const dueDate = newTaskDueDate.value;
   
   // verifies that the user is filling in all the required fields correctly and if they do starts storing it  
   if (name.length === 0 || description.length === 0 || assignedTo.length === 0 || dueDate.length === 0) {
@@ -45,6 +38,10 @@ newTaskForm.addEventListener('submit', (event) => {
     manageTasks.addTask(name, description, assignedTo, dueDate);
     manageTasks.render();
     manageTasks.save();
+    newTaskNameInput.value = '';
+    newTaskDescription.value = '';
+    newTaskAssignedTo.value = '';
+    newTaskDueDate.value = '';
   }  
 });
 
