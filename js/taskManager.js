@@ -13,7 +13,7 @@ function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
         <label for="duedate" class="duedate">Due Date: ${dueDate}</label>
       </form>
 
-      <button class="delete-button btn btn-warning">Delete</button>
+      <button class="delete-button btn btn-success">Delete</button>
 
       <button class="done-button btn btn-dark ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
     </div>
